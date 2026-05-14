@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Dict</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Rajdhani:wght@600;700&display=swap');
+
+  :root {
+    --blue-deep:    #0d47a1;
+    --blue-mid:     #1565C0;
+    --blue-light:   #1976D2;
+    --accent-gold:  #f9a825;
+    --accent-odia:  #880e4f;
+    --accent-hindi: #1b5e20;
+    --accent-odia2: #4a148c;
+    --bg:           #f4f6fb;
+    --card:         #ffffff;
+    --text:         #1a237e;
+    --body-text:    #2c2c3e;
+    --muted:        #546e7a;
+    --border:       #e3eaf5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Merriweather', Georgia, serif;
+    background: var(--bg);
+    color: var(--body-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    background: var(--blue-mid);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .header-stripe {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent, transparent 18px,
+      rgba(255,255,255,0.03) 18px, rgba(255,255,255,0.03) 36px
+    );
+  }
+  .header-inner {
+    position: relative; z-index: 1;
+    max-width: 760px; margin: 0 auto;
+    padding: 32px 20px 28px;
+  }
+  .app-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-bottom: 18px;
+  }
+  .app-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-gold); }
+  .app-badge span { font-family: 'Rajdhani', sans-serif; font-size: 13px; color: rgba(255,255,255,0.85); letter-spacing: 1px; text-transform: uppercase; }
+  h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(26px, 6vw, 38px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .header-sub {
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+  .lang-pills {
+    display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .lang-pill {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px; font-weight: 600;
+    padding: 2px 10px; border-radius: 10px;
+    letter-spacing: 0.5px;
+  }
+  .pill-en { background: var(--blue-light); color: #fff; }
+  .pill-od { background: var(--accent-odia); color: #fff; }
+  .pill-hi { background: var(--accent-hindi); color: #fff; }
+  .pill-odia { background: var(--accent-odia2); color: #fff; }
+
+  /* ── Effective date bar ── */
+  .date-bar {
+    background: var(--blue-deep);
+    padding: 8px 20px;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.8px;
+  }
+  .date-bar strong { color: var(--accent-gold); font-weight: 700; }
+
+  /* ── Table of Contents ── */
+  .toc-wrap {
+    max-width: 760px; margin: 24px auto 0; padding: 0 16px;
+  }
+  .toc-card {
+    background: var(--blue-deep);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 12px rgba(13,71,161,0.18);
+  }
+  .toc-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px;
+  }
+  .toc-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.07);
+    text-decoration: none;
+    transition: background 0.18s;
+  }
+  .toc-link:hover { background: rgba(255,255,255,0.15); }
+  .toc-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--accent-gold);
+    min-width: 18px;
+  }
+  .toc-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px; color: rgba(255,255,255,0.82);
+    line-height: 1.3;
+  }
+
+  /* ── Main content ── */
+  main {
+    max-width: 760px;
+    margin: 24px auto 60px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* ── Section cards ── */
+  .section-card {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.09);
+    overflow: hidden;
+    animation: slideIn 0.3s ease both;
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section-card:nth-child(1)  { animation-delay: 0.04s; }
+  .section-card:nth-child(2)  { animation-delay: 0.08s; }
+  .section-card:nth-child(3)  { animation-delay: 0.12s; }
+  .section-card:nth-child(4)  { animation-delay: 0.16s; }
+  .section-card:nth-child(5)  { animation-delay: 0.20s; }
+  .section-card:nth-child(6)  { animation-delay: 0.24s; }
+  .section-card:nth-child(7)  { animation-delay: 0.28s; }
+  .section-card:nth-child(8)  { animation-delay: 0.32s; }
+  .section-card:nth-child(9)  { animation-delay: 0.36s; }
+  .section-card:nth-child(10) { animation-delay: 0.40s; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    background: linear-gradient(90deg, #e8eef9 0%, #f5f8ff 100%);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+  }
+  .section-header:active { background: #dce7f5; }
+  .section-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px; font-weight: 700;
+    color: var(--blue-mid);
+    background: rgba(21,101,192,0.1);
+    border-radius: 6px;
+    padding: 2px 7px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px; font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.3px;
+    flex: 1;
+  }
+  .chevron {
+    font-size: 11px; color: var(--muted);
+    transition: transform 0.22s;
+    flex-shrink: 0;
+  }
+  .section-card.open .chevron { transform: rotate(180deg); }
+
+  .section-body {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .section-card.open .section-body {
+    max-height: 1200px;
+    padding: 16px 18px;
+  }
+  .section-body p {
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: var(--body-text);
+    margin-bottom: 12px;
+  }
+  .section-body p:last-child { margin-bottom: 0; }
+  .section-body ul {
+    margin: 8px 0 12px 16px;
+    padding: 0;
+  }
+  .section-body li {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--body-text);
+    margin-bottom: 5px;
+    list-style: none;
+    position: relative;
+    padding-left: 14px;
+  }
+  .section-body li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--blue-mid);
+    font-size: 10px;
+    top: 3px;
+  }
+
+  /* ── Highlight boxes ── */
+  .highlight-box {
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 10px 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .highlight-box.green {
+    background: #e8f5e9;
+    border-left: 3px solid var(--accent-hindi);
+    color: #1b3320;
+  }
+  .highlight-box.purple {
+    background: #f3e5f5;
+    border-left: 3px solid var(--accent-odia2);
+    color: #2d0e45;
+  }
+  .highlight-box.amber {
+    background: #fff8e1;
+    border-left: 3px solid #f9a825;
+    color: #3e2a00;
+  }
+  .highlight-box.blue {
+    background: #e3f2fd;
+    border-left: 3px solid var(--blue-mid);
+    color: #0d1b3e;
+  }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: var(--blue-deep);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(13,71,161,0.2);
+    animation: slideIn 0.3s 0.44s ease both;
+  }
+  .contact-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px; font-weight: 700;
+    color: #fff; margin-bottom: 6px;
+  }
+  .contact-card p {
+    font-size: 13px; color: rgba(255,255,255,0.65);
+    line-height: 1.6; margin-bottom: 14px;
+  }
+  .donate-btn {
+    display: inline-block;
+    padding: 9px 22px;
+    background: var(--accent-gold);
+    color: #1a1a1a;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 13px; font-weight: 700;
+    border-radius: 20px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+  }
+  .donate-btn:hover { opacity: 0.88; }
+
+  /* ── Footer ── */
+  footer {
+    background: var(--blue-deep);
+    padding: 16px 20px;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+  }
+  footer strong { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-stripe"></div>
+  <div class="header-inner">
+    <div class="app-badge">
+      <div class="dot"></div>
+      <span>Dict · Odia Dictionary</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="header-sub">We respect your privacy. Here is exactly how this app handles your data.</p>
+    <div class="lang-pills">
+      <span class="lang-pill pill-en">EN</span>
+      <span class="lang-pill pill-od">OD</span>
+      <span class="lang-pill pill-hi">HI</span>
+      <span class="lang-pill pill-odia">Odia Dict</span>
+    </div>
+  </div>
+</header>
+
+<div class="date-bar">
+  Effective date: <strong>June 2025</strong> &nbsp;·&nbsp; Applies to Dict (Android &amp; Browser)
+</div>
+
+<!-- Table of Contents -->
+<div class="toc-wrap">
+  <div class="toc-card">
+    <div class="toc-title">Contents</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#" onclick="toggle(1);return false;"><span class="toc-num">01</span><span class="toc-text">Overview</span></a>
+      <a class="toc-link" href="#" onclick="toggle(2);return false;"><span class="toc-num">02</span><span class="toc-text">Data We Collect</span></a>
+      <a class="toc-link" href="#" onclick="toggle(3);return false;"><span class="toc-num">03</span><span class="toc-text">Local Storage</span></a>
+      <a class="toc-link" href="#" onclick="toggle(4);return false;"><span class="toc-num">04</span><span class="toc-text">Network &amp; Databases</span></a>
+      <a class="toc-link" href="#" onclick="toggle(5);return false;"><span class="toc-num">05</span><span class="toc-text">Text-to-Speech</span></a>
+      <a class="toc-link" href="#" onclick="toggle(6);return false;"><span class="toc-num">06</span><span class="toc-text">File Access</span></a>
+      <a class="toc-link" href="#" onclick="toggle(7);return false;"><span class="toc-num">07</span><span class="toc-text">Third-Party Services</span></a>
+      <a class="toc-link" href="#" onclick="toggle(8);return false;"><span class="toc-num">08</span><span class="toc-text">Children's Privacy</span></a>
+      <a class="toc-link" href="#" onclick="toggle(9);return false;"><span class="toc-num">09</span><span class="toc-text">Changes to Policy</span></a>
+      <a class="toc-link" href="#" onclick="toggle(10);return false;"><span class="toc-num">10</span><span class="toc-text">Contact Us</span></a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- 1 -->
+  <div class="section-card open" id="sec1">
+    <div class="section-header" onclick="toggle(1)">
+      <span class="section-num">01</span>
+      <span class="section-title">Overview</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight-box green">
+        <strong>Short version:</strong> Dict does not collect, transmit, or sell your personal data. Everything stays on your device.
+      </div>
+      <p>Dict ("the App") is a multilingual dictionary and reader tool supporting English, Odia (ଓଡ଼ିଆ), and Hindi (हिंदी). This Privacy Policy describes what information the App accesses, how it is used, and what stays on your device.</p>
+      <p>By using Dict, you agree to the practices described in this policy. If you do not agree, please discontinue use of the App.</p>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section-card" id="sec2">
+    <div class="section-header" onclick="toggle(2)">
+      <span class="section-num">02</span>
+      <span class="section-title">Data We Collect</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight-box green">
+        <strong>We collect no personal data.</strong> No account, no sign-in, no tracking.
+      </div>
+      <p>Dict does <strong>not</strong> collect:</p>
+      <ul>
+        <li>Your name, email address, or any identifying information</li>
+        <li>Your search queries or lookup history</li>
+        <li>Your location or IP address</li>
+        <li>Device identifiers or advertising IDs</li>
+        <li>Usage analytics or crash reports</li>
+        <li>Any content from files you open in the Reader</li>
+      </ul>
+      <p>The App operates entirely offline after the dictionary databases are downloaded. No user data is transmitted to any server operated by us.</p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="section-card" id="sec3">
+    <div class="section-header" onclick="toggle(3)">
+      <span class="section-num">03</span>
+      <span class="section-title">Local Storage &amp; Cache</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight-box blue">
+        All storage is local to your device and never leaves it.
+      </div>
+      <p>The App stores the following data locally on your device only:</p>
+      <ul>
+        <li><strong>Dictionary databases</strong> — cached in your browser's Cache Storage or app storage to enable offline use. These are read-only data files, not personal data.</li>
+        <li><strong>Saved note / TTS text</strong> — text you type or paste into the Reader/TTS panel is saved to <code>localStorage</code> under the key <code>dict-note-v1</code> for your convenience across sessions.</li>
+        <li><strong>Reader position</strong> — the last-read page number for files you open, saved per filename in <code>localStorage</code>, so you can resume reading.</li>
+        <li><strong>Reader preferences</strong> — font size, theme, and speed settings you choose in the Reader are not persisted server-side.</li>
+      </ul>
+      <p>You can clear all locally stored data at any time through your browser settings or by uninstalling the Android app.</p>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="section-card" id="sec4">
+    <div class="section-header" onclick="toggle(4)">
+      <span class="section-num">04</span>
+      <span class="section-title">Network &amp; Dictionary Databases</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>On first use, the App downloads three compressed dictionary database files from GitHub (github.com/abhayattcc/Best-odia-dictionary). These are static, read-only files:</p>
+      <ul>
+        <li><code>english_odia.db.gz</code> — English ↔ Odia word database</li>
+        <li><code>english_hindi.db.gz</code> — English ↔ Hindi word database</li>
+        <li><code>odia_meaning.db.gz</code> — Odia ↔ Odia meaning database</li>
+      </ul>
+      <p>These files are cached locally after the first download. No search query or personal information is sent to GitHub or any other server when you search. All lookups run entirely in-browser using SQL.js (a WebAssembly SQLite engine).</p>
+      <div class="highlight-box amber">
+        The only network request Dict makes after initial setup is re-downloading updated database files if your cache is cleared.
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="section-card" id="sec5">
+    <div class="section-header" onclick="toggle(5)">
+      <span class="section-num">05</span>
+      <span class="section-title">Text-to-Speech (TTS)</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>Dict includes a Text-to-Speech feature that can read dictionary results and your saved notes aloud in English, Odia, or Hindi.</p>
+      <ul>
+        <li><strong>Android app:</strong> TTS is handled entirely by the Android system's built-in TTS engine (e.g., Google TTS) via a local Java bridge. Text is processed on-device.</li>
+        <li><strong>Browser:</strong> TTS uses the Web Speech API built into your browser. Text is processed by your browser/OS, not by any server we operate.</li>
+      </ul>
+      <div class="highlight-box purple">
+        Please review your browser's or Android system's own privacy policy to understand how the Web Speech API or Android TTS engine handles spoken text. Some implementations may process audio on remote servers (this is outside our control).
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section-card" id="sec6">
+    <div class="section-header" onclick="toggle(6)">
+      <span class="section-num">06</span>
+      <span class="section-title">File Access</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>The Reader and TTS panel allow you to open local files (TXT, HTML, DOCX, PDF, etc.) for reading and text-to-speech playback. When you open a file:</p>
+      <ul>
+        <li>The file is read locally in your browser using standard Web APIs (FileReader, PDF.js, pako).</li>
+        <li>File contents are held in memory only for the current session.</li>
+        <li>No file content is uploaded to any external server.</li>
+        <li>On Android, if you grant storage permission, the App may use a file picker. The selected file is read locally and is not transmitted anywhere.</li>
+      </ul>
+      <p>Files you save to the TTS panel text area are stored in <code>localStorage</code> on your device only.</p>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="section-card" id="sec7">
+    <div class="section-header" onclick="toggle(7)">
+      <span class="section-num">07</span>
+      <span class="section-title">Third-Party Services</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>The App loads a small number of open-source JavaScript libraries from the CDN <strong>cdnjs.cloudflare.com</strong> for core functionality:</p>
+      <ul>
+        <li><strong>pako</strong> — for decompressing database files</li>
+        <li><strong>sql.js</strong> — for in-browser SQL database queries</li>
+        <li><strong>pdf.js</strong> — for reading PDF files locally (loaded on demand)</li>
+        <li><strong>Google Fonts</strong> (browser version only) — for display typography</li>
+      </ul>
+      <p>These CDN requests may expose your IP address to Cloudflare and Google as part of standard HTTP requests. We do not control those parties' data practices. Please review their privacy policies for details.</p>
+      <div class="highlight-box amber">
+        The <strong>Donate</strong> button links to Razorpay (razorpay.me). If you tap it, you will be taken to the Razorpay website, which has its own privacy policy. We do not receive or store any payment information.
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="section-card" id="sec8">
+    <div class="section-header" onclick="toggle(8)">
+      <span class="section-num">08</span>
+      <span class="section-title">Children's Privacy</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>Dict is a general-purpose dictionary app suitable for all ages. Because the App does not collect any personal data from anyone, it does not knowingly collect personal information from children under 13 (or under 16 in applicable jurisdictions).</p>
+      <p>If you believe we have inadvertently received personal data from a child, please contact us and we will take steps to delete it.</p>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="section-card" id="sec9">
+    <div class="section-header" onclick="toggle(9)">
+      <span class="section-num">09</span>
+      <span class="section-title">Changes to This Policy</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>We may update this Privacy Policy from time to time to reflect changes to the App or applicable law. When we do, we will update the effective date at the top of this page.</p>
+      <p>We encourage you to review this policy periodically. Continued use of the App after changes are posted constitutes your acceptance of the revised policy.</p>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="section-card" id="sec10">
+    <div class="section-header" onclick="toggle(10)">
+      <span class="section-num">10</span>
+      <span class="section-title">Contact Us</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <p>If you have any questions or concerns about this Privacy Policy or the App's data practices, please reach out:</p>
+      <ul>
+        <li><strong>Developer:</strong> Abhaya Behera</li>
+        <li><strong>GitHub:</strong> github.com/abhayattcc</li>
+        <li><strong>Repository:</strong> abhayattcc/Best-odia-dictionary</li>
+      </ul>
+      <p>We will do our best to respond to privacy-related inquiries within a reasonable time.</p>
+    </div>
+  </div>
+
+  <!-- Donate / Contact card -->
+  <div class="contact-card">
+    <h3>Support Dict</h3>
+    <p>Dict is free and open source. If it has been useful to you, consider making a small donation to help keep the project alive.</p>
+    <a class="donate-btn" href="https://razorpay.me/@abhayabehera4628" target="_blank">💲 Donate via Razorpay</a>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2025 <strong>Abhaya Behera</strong> · Dict — Odia Dictionary &nbsp;·&nbsp; github.com/abhayattcc
+</footer>
+
+<script>
+function toggle(n) {
+  const card = document.getElementById('sec' + n);
+  card.classList.toggle('open');
+}
+// Open all on desktop, keep first open on mobile
+if (window.innerWidth >= 600) {
+  for (let i = 2; i <= 10; i++) toggle(i);
+}
+</script>
+</body>
+</html>
